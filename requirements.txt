@@ -1,2 +1,7 @@
 fastapi
 uvicorn[standard]
+pydantic
+pickle
+pandas
+sklearn.model_selection
+sklearn.neighbors
