@@ -1,6 +1,6 @@
-FROM python:3.10-alpine
+FROM python:3.8.10-slim
 
-RUN mkdir -p /home/app
+RUN mkdir -p /home/py-app
 
 
 # Copy the requirements file to the working directory
@@ -9,6 +9,6 @@ COPY requirements.txt .
 # Install dependencies from requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . /home/app
+COPY . /home/py-app
 
-CMD ["python", "/home/app/app.py"]
+CMD ["python" , "/home/app/app.py"]
