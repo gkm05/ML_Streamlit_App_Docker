@@ -21,7 +21,7 @@ jobs:
     - name:  Tag Docker Image
       run: docker tag ci_cd_pipeline:latest gkm05/ci_cd_pipeline:latest
     - name: push docker image
-      run: docker push $DOCKER_USER/ci_cd_pipeline:latest
+      run: docker push gkm05/ci_cd_pipeline:latest
 
 
       
