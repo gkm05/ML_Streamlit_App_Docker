@@ -11,9 +11,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: login to Docker Hub
-      env: 
-        DOCKER_USER:${{secrets.USER_ID}}
-        DOCKER_PASSWORD:${{secrets.PASSWORD}}
+      env:
+        DOCKER_USER: ${{secrets.USER_ID}}
+        DOCKER_PASSWORD: ${{secrets.PASSWORD}}
       run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
       
     - name: Build the Docker image
