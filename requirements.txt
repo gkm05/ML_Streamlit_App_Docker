@@ -1,6 +1,6 @@
 fastapi==0.115.0
 uvicorn[standard]
-pydantic==2.9.2
-pandas==1.4.4
-scikit-learn==1.0.2
-streamlit==1.39.0
+pydantic==2.8.2
+pandas==2.2.2
+scikit-learn==1.5.1
+streamlit==1.37.1
