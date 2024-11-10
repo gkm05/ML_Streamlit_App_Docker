@@ -1,0 +1,26 @@
+name: ci_pipeline_2
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: login to docker hub
+      env:
+        DOCKER_USER: ${{secrets.USER_ID}}
+        DOCKER_PASSWORD: ${{secrets.PASSWORD}}
+      run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+    - name: Build the Docker image
+      run: docker build -t ci_cd_pipeline_image .
+
+    - name: Tag Docker Image
+      run: docker tag ci_cd_pipeline_image:latest $DOCKER_USER/ci_cd_pipeline_image:latest
+    - name: Push Docker image
+      run: docker push $DOCKER_USER/ci_cd_pipeline_image:latest
