@@ -11,7 +11,7 @@ with open('iris_model.pkl', 'rb') as file:
     model = pickle.load(file)
 
 # Title
-st.title('Iris Flower Classification using Pre-Trained Model')
+st.title('Iris Flower Classification Model')
 
 # Sidebar for user input
 st.sidebar.header('User Input Parameters')
